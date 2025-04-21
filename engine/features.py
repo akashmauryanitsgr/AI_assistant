@@ -24,7 +24,7 @@ cursor = con.cursor()
 @eel.expose
 def playAssistantSound():
     pygame.mixer.init()  # Initialize the mixer
-    pygame.mixer.music.load(r"jarvis\www\assets\audio\start_sound.mp3")# Load your audio file
+    pygame.mixer.music.load(r"D:/PYTHON PROJECT/AI_assistant/www/assets/audio/start_sound.mp3")# Load your audio file
     pygame.mixer.music.play() 
     #music_dir ="www/assets/audio/start_sound.mp3"
     #playsound(music_dir)

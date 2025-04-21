@@ -1,20 +1,30 @@
 import os
 import eel
 import sys
-#sys.path.append(os.path.dirname(os.path.abspath('D:\\endterm\\jarvis\\main.py')))
 
+# Import your custom assistant functions
 from engine.features import *
 from engine.command import *
-    
+
 def start():
+    # Initialize Eel with your absolute path to the "www" folder
+    eel.init(r"D:\PYTHON PROJECT\AI_assistant\www")
     
-  eel.init("www")
-
-  playAssistantSound()
-  os.system('start chrome.exe --app=" http://127.0.0.1:5501/jarvis/www/index.html"')
-  
-  eel.start('index.html', mode="chrome", host='localhost')
- 
-  
-
+    # Play your assistant startup sound
+    playAssistantSound()
     
+    # OPTION 1: Launch as Chrome App Window (for standalone look)
+    os.system('start chrome.exe --app="http://localhost:8000/index.html"')
+    
+    # Start Eel web server without opening a second browser window
+    eel.start('index.html', mode="none", host='localhost')
+
+    # ---------
+    # If you prefer Eel to auto-open Chrome normally, then use this instead:
+    # eel.start('index.html', mode="chrome", host='localhost')
+    # and remove the os.system(...) line above
+    # ---------
+
+# Only run if this file is executed directly
+if __name__ == "__main__":
+    start()
