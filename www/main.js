@@ -45,10 +45,11 @@ $('.siri-message').textillate({
 // mic button click event
 
 $("#MicBtn").click(function () { 
-    eel.playAssistantSound()
+    eel.playAssistantSound()()
     $("#Oval").attr("hidden", true);
     $("#SiriWave").attr("hidden", false);
     eel.allCommands()()
+    
     
 });
 
@@ -56,7 +57,7 @@ function doc_keyUp(e) {
     // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
 
     if (e.key === 'v' && e.metaKey) {
-        eel.playAssistantSound()
+        eel.playAssistantSound()()
         $("#Oval").attr("hidden", true);
         $("#SiriWave").attr("hidden", false);
         eel.allCommands()()

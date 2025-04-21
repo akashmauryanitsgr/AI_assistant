@@ -13,9 +13,8 @@ import webbrowser
 import pywhatkit as kit
 import re
 import sqlite3
-
+import pygame
 from engine.helper import extract_yt_term, remove_words
-
 
 
 con =sqlite3.connect("jarvis.db")
@@ -23,7 +22,10 @@ con =sqlite3.connect("jarvis.db")
 cursor = con.cursor()
 # playing assistant sound in starting
 @eel.expose
-#def playAssistantSound():
+def playAssistantSound():
+    pygame.mixer.init()  # Initialize the mixer
+    pygame.mixer.music.load(r"jarvis\www\assets\audio\start_sound.mp3")# Load your audio file
+    pygame.mixer.music.play() 
     #music_dir ="www/assets/audio/start_sound.mp3"
     #playsound(music_dir)
     

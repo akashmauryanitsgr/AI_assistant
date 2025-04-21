@@ -10,10 +10,10 @@ def start():
     
   eel.init("www")
 
-  #playAssistantSound()
-  os.system('start chrome.exe --app=" http://127.0.0.1:5501//jarvis/www/index.html"')
+  playAssistantSound()
+  os.system('start chrome.exe --app=" http://127.0.0.1:5501/jarvis/www/index.html"')
   
-  eel.start('index.html', mode="chrome", host='localhost', block=True)
+  eel.start('index.html', mode="chrome", host='localhost')
  
   
 
